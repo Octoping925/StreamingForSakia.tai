@@ -1,0 +1,1 @@
+군대에 있는 [진태](https://www.instagram.com/sakia.tai/) 를 위한 동영상 스트리밍 서버입니다.
