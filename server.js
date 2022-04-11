@@ -9,7 +9,8 @@ app.listen(8080, () => {
 });
 
 app.get("/", (request, response)=> {
-    response.sendFile(__dirname + "/index.html");
+    // response.sendFile(__dirname + "/index.html");
+    response.sendFile(__dirname + "/videotest.html");
 });
 
 app.get("/video", (request, response)=> {
@@ -28,7 +29,20 @@ app.get("/heat", (request, response) => {
 
     const filestream = fs.createReadStream(filePath);
     filestream.pipe(response);
-
-
 });
+
+app.get("/vengeance", (request, response) => {
+    const path = "C:/Users/myc13/Documents/Project/StreamingForSakiatai";
+    const filePath = "F:/Vengeance.Is.Mine.1979.mp4";
+    const mimetype = mime.getType(filePath);
+
+    response.setHeader("Content-disposition", "attachment; filename=" + filePath);
+    response.setHeader("Content-type", mime.getType(filePath));
+
+    const filestream = fs.createReadStream(filePath);
+    filestream.pipe(response);
+});
+
 // 175.119.119.88:8080
+
+// plyr.io
